@@ -16,6 +16,7 @@ bool comp(string a, string b) {
 
     for (int i=0; i<size; i++) {
         if (a[i] < b[i]) return true;
+        if (a[i] > b[i]) return false;
     }
 
     return false;
