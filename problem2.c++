@@ -28,7 +28,7 @@ int main() {
     int n, ans;
     cin >> n;
 
-    doRec(n);
+    ans = doRec(n);
     cout << ans << endl;
     ans = notRec(n);
     cout << ans << endl;
