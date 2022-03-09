@@ -3,11 +3,8 @@
 using namespace std;
 
 bool comp(string a, string b) {
-    if (a.find("0b") != 0) cout << a << " missing 0b" << endl;
-    if (b.find("0b") != 0) cout << b << " missing 0b" << endl;
-    
-    a.erase(0, 2);
-    b.erase(0, 2);
+    if (a.find("0b") == 0) a.erase(0, 2);;
+    if (b.find("0b") == 0) b.erase(0, 2);;
 
     int size = max(a.size(), b.size());
 
