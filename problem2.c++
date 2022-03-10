@@ -23,7 +23,17 @@ int doRec(int n, int currently=3, int prev1=1, int prev2=1) {
     return doRec(n, ++currently, prev2, prev1+prev2);
 }
 
+void doTest() {
+    assert(notRec(5) == 5);
+    assert(notRec(4) == 3);
+    assert(doRec(10) == 55);
+    assert(doRec(20) == 6765);
+    assert(doRec(12) == 144);
+}
+
 int main() {
+
+    doTest();
 
     int n, ans;
     cin >> n;
