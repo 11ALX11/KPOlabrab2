@@ -27,11 +27,19 @@ int main() {
 
     int n, ans;
     cin >> n;
+    clock_t timer1, timer2;
 
+    timer1 = clock();
     ans = doRec(n);
+    timer1 = clock() - timer1;
     cout << ans << endl;
+
+    timer2 = clock();
     ans = notRec(n);
+    timer2 = clock() - timer2;
     cout << ans << endl;
+
+    cout << "With rec: " << timer1/1000. << "s . Without rec: " << timer2/1000. << "s\n";
 
     return 0;
 }
