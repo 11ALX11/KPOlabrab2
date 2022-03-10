@@ -31,7 +31,43 @@ void sortBub(string *A, int n ) {
     }
 }
 
+bool compareArrays(string *Array, string *ExpectedArray, int n) {
+    for (int i=0; i<n; i++) {
+        if (Array[i] != ExpectedArray[i]) return false;
+    }
+    return true;
+}
+
+void doTest() {
+    string A1[] = {"0b01", "0b10"};
+    string AE1[] = {"0b10", "0b01"};
+    sortBub(A1, 2);
+    assert(compareArrays(A1, AE1, 2));
+
+    string A2[] = {"0b01", "0b10", "0b11"};
+    string AE2[] = {"0b11", "0b10", "0b01"};
+    sortBub(A2, 3);
+    assert(compareArrays(A2, AE2, 3));
+
+    string A3[] = {"0b01", "0b10", "0b11", "0b0"};
+    string AE3[] = {"0b11", "0b10", "0b01", "0b0"};
+    sortBub(A3, 4);
+    assert(compareArrays(A3, AE3, 4));
+
+    string A4[] = {"0b01", "0b1", "0b11"};
+    string AE4[] = {"0b11", "0b01", "0b1"};
+    sortBub(A4, 3);
+    assert(compareArrays(A4, AE4, 3));
+
+    string A5[] = {"0b01", "0b0", "0b11"};
+    string AE5[] = {"0b11", "0b01", "0b0"};
+    sortBub(A5, 3);
+    assert(compareArrays(A5, AE5, 3));
+}
+
 int main() {
+
+    doTest();
 
     int n;
     string A[200];
